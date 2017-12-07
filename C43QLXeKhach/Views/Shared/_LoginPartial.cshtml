@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNet.Identity
+@using C43QLXeKhach.Models
+@{ 
+    var sessionVar = HttpContext.Current.Session["C43QLXeKhach_USER"]; //it's object
+    NHANVIEN user = sessionVar == null ? null : (NHANVIEN)sessionVar;
+} 
+@if (user != null)
+
+{
+    using (Html.BeginForm("LogOff", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello " + user.TenNV + "!", "Index", "NHANVIENs", routeValues: null, htmlAttributes: new { title = "Thong tin" })
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

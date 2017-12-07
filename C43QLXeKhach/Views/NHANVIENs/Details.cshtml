@@ -1,0 +1,104 @@
+﻿@model C43QLXeKhach.Models.NHANVIEN
+
+@{
+    ViewBag.Title = "Chi Tiết Nhân Viên";
+}
+
+<h2>Chi Tiết Nhân Viên</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            TênNV
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNV)
+        </dd>
+
+        <dt>
+            CMND
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CMND)
+        </dd>
+
+        <dt>
+            Ngày Sinh
+        </dt>
+
+        <dd>
+            @Model.NgaySinh.Value.ToString("dd/MM/yyyy")
+        </dd>
+
+        <dt>
+           Địa Chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            SĐT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+           Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Trạng Thái Tài Khoản
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThaiTaiKhoan)
+        </dd>
+
+        <dt>
+            Người Tạo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createUser)
+        </dd>
+
+        <dt>
+           Người Cập Nhật
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastupdateUser)
+        </dd>
+
+        <dt>
+            Ngày Tạo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createDate)
+        </dd>
+
+        <dt>
+            Ngày Cập Nhật
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastupdateDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.MaNV }) |
+    @Html.ActionLink("Quay Về", "Index")
+</p>
